@@ -5,14 +5,17 @@ import emailService from '../util/email.js';
 
 export const registerUser = async (userData) => {
   try {
-    const { error } = validate(userData);
+    const { error } = validate(userData);//using to validate user data email and name 
+
     if (error) throw new Error(error.details[0].message);
 
-    let user = await User.findOne({ email: userData.email });
+    let user = await User.findOne({ email: userData.email });//check that user email valid have in data base
+
     if (user) {
       if (user.verified) {
-        throw new Error("User with given email already exists!");
-      } else {
+        throw new Error("User with given email already exists!");// that user verify is true that means that user verify that email
+      }
+       else {
         await Token.deleteMany({ userId: user._id });
         user.name = userData.name;
         await user.save();

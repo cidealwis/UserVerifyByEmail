@@ -1,4 +1,4 @@
-import { registerUser, verifyEmail } from '../services/userService.js'; // Adjust the path as needed
+import { registerUser, verifyEmail } from '../services/user.js';
 
 export const register = async (req, res) => {
   try {

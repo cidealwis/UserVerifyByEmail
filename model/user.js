@@ -21,7 +21,7 @@ const userSchema = new Schema({
 
 const User = mongoose.model("User", userSchema);
 
-// Joi validation
+
 const validate = (user) => {
   const schema = Joi.object({
     name: Joi.string().min(3).max(255).required(),
@@ -31,3 +31,5 @@ const validate = (user) => {
 };
 
 export { User, validate };
+
+//Joi use to validate that email , and that name how mutch data use to that like 

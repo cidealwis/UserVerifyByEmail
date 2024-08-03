@@ -16,3 +16,5 @@ const tokenSchema = new Schema({
 const Token = mongoose.model("Token", tokenSchema);
 
 export default Token;
+
+//use to token is check and user id 
